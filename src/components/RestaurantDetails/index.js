@@ -2,7 +2,7 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {AiFillStar} from 'react-icons/ai'
-import {FaRupeeSign, FaGripLinesVertical} from 'react-icons/fa'
+import {FaRupeeSign, FaGripLinesVertical, FaDoorOpen} from 'react-icons/fa'
 // import TestyContext from '../../context/TestyContext'
 import Loader from 'react-loader-spinner'
 import Footer from '../Footer'
@@ -11,8 +11,18 @@ import Header from '../Header'
 import FoodItem from '../FoodItem'
 import './index.css'
 
+const apiStatus = {
+  initial: 'INITIAL',
+  progress: 'PROGRESS',
+  success: 'SUCCESS',
+}
+
 class RestaurantDetails extends Component {
-  state = {restaurantDetails: {}, foodItemsDetailsList: [], isLoading: true}
+  state = {
+    restaurantDetails: {},
+    foodItemsDetailsList: [],
+    status: apiStatus.initial,
+  }
 
   componentDidMount() {
     this.getRestaurantDetails()
@@ -43,11 +53,12 @@ class RestaurantDetails extends Component {
     this.setState({
       restaurantDetails: updatedData,
       foodItemsDetailsList: updatedData.foodItemsList,
-      isLoading: false,
+      status: apiStatus.success,
     })
   }
 
   getRestaurantDetails = async () => {
+    this.setState({status: apiStatus.progress})
     const {match} = this.props
     const {params} = match
     const {id} = params
@@ -63,7 +74,7 @@ class RestaurantDetails extends Component {
     const response = await fetch(url, options)
     // console.log(response)
     const data = await response.json()
-    // console.log(data)
+    console.log(data)
     if (response.ok === true) {
       this.onSuccessFullyFetchingData(data)
     }
@@ -79,6 +90,7 @@ class RestaurantDetails extends Component {
       rating,
       costForTwo,
       reviewsCount,
+      opensAt,
     } = restaurantDetails
     return (
       <div className="restaurant-info-page">
@@ -86,7 +98,12 @@ class RestaurantDetails extends Component {
           <div className="restaurant-details-sec">
             <img className="card-img" src={imageUrl} alt="im" />
             <div className="rd-text-container">
-              <h1 className="rd-heading"> {name} </h1>
+              <div className="rd-heading-container">
+                <h1 className="rd-heading"> {name} </h1>
+                <p className="rd-open-at">
+                  <FaDoorOpen className="open-door-icon" /> {opensAt}
+                </p>
+              </div>
               <p className="rd-paragraph"> {cuisine} </p>
               <p className="rd-paragraph"> {location} </p>
               <div className="rating-and-cost-container">
@@ -127,15 +144,27 @@ class RestaurantDetails extends Component {
     </div>
   )
 
+  renderRestaurantInfoOnApiStatus = () => {
+    const {status} = this.state
+    // console.log(status)
+    switch (status) {
+      case apiStatus.progress:
+        return this.renderLoader()
+      case apiStatus.success:
+        return this.renderSuccessView()
+      default:
+        return null
+    }
+  }
+
   render() {
-    const {isLoading} = this.state
     return (
       <div
         className="restaurant-info-container"
         testid="restaurant-details-loader"
       >
         <Header />
-        {isLoading ? this.renderLoader() : this.renderSuccessView()}
+        {this.renderRestaurantInfoOnApiStatus()}
       </div>
     )
   }

@@ -89,7 +89,7 @@ class Carousel extends Component {
 
   renderCarouselViewOnApiStatus = () => {
     const {status} = this.state
-    console.log(status)
+    // console.log(status)
     switch (status) {
       case apiStatus.progress:
         return this.renderLoader()

@@ -23,13 +23,19 @@ const sortByOptions = [
   },
 ]
 
+const apiStatus = {
+  initial: 'INITIAL',
+  progress: 'PROGRESS',
+  success: 'SUCCESS',
+}
+
 class Restaurants extends Component {
   state = {
     restaurantsDetailsList: [],
     limit: 9,
     activePage: 1,
     activeSortBy: sortByOptions[0].option,
-    isLoading: true,
+    status: apiStatus.initial,
   }
 
   componentDidMount() {
@@ -61,13 +67,14 @@ class Restaurants extends Component {
     this.setState(
       {
         restaurantsDetailsList: updatedData,
-        isLoading: false,
+        status: apiStatus.success,
       },
       this.apiCall,
     )
   }
 
   getRestaurantsData = async () => {
+    this.setState({status: apiStatus.progress})
     const token = Cookies.get('jwt_token')
     const {limit, activePage, activeSortBy} = this.state
     const offset = (activePage - 1) * limit
@@ -169,9 +176,21 @@ class Restaurants extends Component {
     </div>
   )
 
+  renderRestaurantsOnApi = () => {
+    const {status} = this.state
+    // console.log(status)
+    switch (status) {
+      case apiStatus.progress:
+        return this.renderLoader()
+      case apiStatus.success:
+        return this.renderSuccessView()
+      default:
+        return null
+    }
+  }
+
   render() {
-    const {isLoading} = this.state
-    return <> {isLoading ? this.renderLoader() : this.renderSuccessView()} </>
+    return <> {this.renderRestaurantsOnApi()} </>
   }
 }
 
