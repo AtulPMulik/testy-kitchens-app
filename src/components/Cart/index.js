@@ -8,8 +8,6 @@ import CartItem from '../CartItem'
 import Footer from '../Footer'
 import EmptyCart from '../EmptyCart'
 
-// import PaymentSuccessful from '../PaymentSuccessful'
-
 import './index.css'
 
 const Cart = () => (
