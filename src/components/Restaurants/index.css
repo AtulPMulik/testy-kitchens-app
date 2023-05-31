@@ -14,7 +14,7 @@
 .paragraph {
   font-size: 16px;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 20px;
   letter-spacing: 0px;
   text-align: left;
   color: #64748b;
@@ -144,9 +144,9 @@
 
 @media (orientation: landscape) {
   .sort-icon {
-    height: 30px;
+    height: 25px;
     width: 30px;
-    margin-right: 20px;
+    margin-right: 10px;
   }
   .sort-container {
     display: flex;
@@ -158,8 +158,11 @@
   .select {
     border-style: none;
     font-size: 16px;
-    color: #475569;
+    color: #ed052b;
+    font-weight: 600;
     margin-top: 5px;
+    margin-left: 5px;
+    font-style: italic;
   }
   .restaurants-ul-container {
     display: flex;

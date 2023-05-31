@@ -225,7 +225,19 @@
     background-size: cover;
   }
   .popup-card {
-    background-color: skyblue;
+    background-image: linear-gradient(
+      to right,
+      #ff00bf,
+      #ffbf00,
+      #bfff00,
+      #00ffff,
+      #0080ff,
+      #bf00ff,
+      #ff00bf
+    );
+    border-style: solid;
+    border-width: 2px;
+    border-color: #df0f19;
   }
 }
 

@@ -29,6 +29,9 @@
   flex-direction: column;
   width: 160px;
   height: 100px;
+  background-color: #d68706;
+  border-bottom-right-radius: 14px;
+  border-top-left-radius: 14px;
 }
 .item-name {
   font-style: normal;
@@ -77,8 +80,10 @@
     margin-left: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 50%;
     height: 100px;
+    padding-left: 10px;
   }
   .item-name {
     font-size: 20px;
@@ -112,7 +117,27 @@
   .item-link {
     text-decoration: none;
     width: 30%;
-    margin-right: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    margin-right: 40px;
+  }
+  .item-name {
+    font-size: 15px;
+    color: #ed0505;
+  }
+  .cuisine {
+    font-size: 13px;
+    color: #ffffff;
+    margin-top: 5px;
+  }
+  .rating {
+    color: #e2ed05;
+    font-size: 13px;
+  }
+
+  .rating-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0px;
+    margin-top: 5px;
   }
 }
