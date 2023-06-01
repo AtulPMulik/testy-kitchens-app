@@ -94,18 +94,24 @@
 }
 
 .popup-card {
-  background-color: #fcd303;
   height: 20vh;
   width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 40px;
   font-size: 20px;
   font-weight: 700;
   color: #334155;
   font-family: serif;
+  border-top-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+  border-top-right-radius: 80px;
+  border-bottom-left-radius: 80px;
+  background-image: linear-gradient(to top left, #ffcc00 0%, #ff99cc 100%);
+  border-style: solid;
+  border-width: 2px;
+  border-color: red;
 }
 .confirm-btn {
   background-color: green;
@@ -223,21 +229,6 @@
     height: 100vh;
     width: 550px;
     background-size: cover;
-  }
-  .popup-card {
-    background-image: linear-gradient(
-      to right,
-      #ff00bf,
-      #ffbf00,
-      #bfff00,
-      #00ffff,
-      #0080ff,
-      #bf00ff,
-      #ff00bf
-    );
-    border-style: solid;
-    border-width: 2px;
-    border-color: #df0f19;
   }
 }
 

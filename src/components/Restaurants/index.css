@@ -25,6 +25,16 @@
   align-items: center;
 }
 
+.select {
+  border-style: none;
+  font-size: 16px;
+  color: #ed052b;
+  font-weight: 600;
+  margin-top: 5px;
+  margin-left: 5px;
+  font-style: italic;
+}
+
 .restaurants-ul-container {
   display: flex;
   flex-direction: row;
@@ -59,12 +69,7 @@
   font-size: 16px;
   color: #475569;
 }
-.select {
-  border-style: none;
-  font-size: 16px;
-  color: #475569;
-  margin-top: 5px;
-}
+
 .loader-container {
   height: 35vh;
   width: 100%;
@@ -94,12 +99,17 @@
   .sort-icon {
     height: 30px;
     width: 30px;
-    margin-right: 20px;
+    margin-right: 10px;
   }
   .sort-container {
     font-size: 16px;
     color: #475569;
     width: 100%;
+  }
+  .select {
+    font-size: 18px;
+    margin-top: 5px;
+    margin-left: 5px;
   }
   .restaurants-ul-container {
     display: flex;
@@ -126,10 +136,15 @@
   .sort-icon {
     height: 30px;
     width: 30px;
-    margin-right: 20px;
+    margin-right: 10px;
   }
   .sort-container {
     width: 30%;
+  }
+  .select {
+    font-size: 20px;
+    margin-top: 5px;
+    margin-left: 5px;
   }
   .restaurants-ul-container {
     display: flex;
@@ -155,15 +170,7 @@
     font-size: 16px;
     color: #475569;
   }
-  .select {
-    border-style: none;
-    font-size: 16px;
-    color: #ed052b;
-    font-weight: 600;
-    margin-top: 5px;
-    margin-left: 5px;
-    font-style: italic;
-  }
+
   .restaurants-ul-container {
     display: flex;
     flex-direction: row;

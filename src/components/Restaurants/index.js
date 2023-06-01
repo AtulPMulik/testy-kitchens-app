@@ -13,13 +13,13 @@ import './index.css'
 const sortByOptions = [
   {
     id: 0,
-    displayText: 'Highest',
-    option: 'Highest',
+    displayText: 'Lowest',
+    option: 'Lowest',
   },
   {
     id: 1,
-    displayText: 'Lowest',
-    option: 'Lowest',
+    displayText: 'Highest',
+    option: 'Highest',
   },
 ]
 
@@ -64,13 +64,10 @@ class Restaurants extends Component {
       },
     }))
     // console.log(updatedData)
-    this.setState(
-      {
-        restaurantsDetailsList: updatedData,
-        status: apiStatus.success,
-      },
-      this.apiCall,
-    )
+    this.setState({
+      restaurantsDetailsList: updatedData,
+      status: apiStatus.success,
+    })
   }
 
   getRestaurantsData = async () => {
@@ -78,7 +75,7 @@ class Restaurants extends Component {
     const token = Cookies.get('jwt_token')
     const {limit, activePage, activeSortBy} = this.state
     const offset = (activePage - 1) * limit
-
+    // console.log(activeSortBy)
     const url = `https://apis.ccbp.in/restaurants-list?offset=${offset}&limit=${limit}&sort_by_rating=${activeSortBy}`
     const options = {
       headers: {
@@ -97,6 +94,7 @@ class Restaurants extends Component {
   }
 
   onChangeOption = event => {
+    console.log(event.target.value)
     this.setState({activeSortBy: event.target.value}, this.getRestaurantsData)
   }
 
@@ -115,7 +113,7 @@ class Restaurants extends Component {
   }
 
   renderSuccessView = () => {
-    const {restaurantsDetailsList, activePage} = this.state
+    const {restaurantsDetailsList, activePage, activeSortBy} = this.state
     return (
       <div className="restaurants-sec">
         <h1 className="popular-heading">Popular Restaurants </h1>
@@ -127,7 +125,11 @@ class Restaurants extends Component {
           <div className="sort-container">
             <MdSort className="sort-icon" />
             <p> Sort by </p>
-            <select className="select" onChange={this.onChangeOption}>
+            <select
+              value={activeSortBy}
+              className="select"
+              onChange={this.onChangeOption}
+            >
               {sortByOptions.map(each => (
                 <option value={each.option} key={each.id}>
                   {each.displayText}

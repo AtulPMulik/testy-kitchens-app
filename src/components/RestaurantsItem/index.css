@@ -37,14 +37,14 @@
   font-style: normal;
   font-weight: 700;
   font-size: 15px;
-  color: #334155;
+  color: #ed0505;
   margin-bottom: 0px;
   margin-top: 0px;
 }
 .cuisine {
   font-weight: 400;
   font-size: 14px;
-  color: #64748b;
+  color: #ffffff;
   margin-bottom: 0px;
   margin-top: 0px;
 }
@@ -57,7 +57,7 @@
 .rating {
   font-weight: 700;
   font-size: 14px;
-  color: #1e293b;
+  color: #e2ed05;
   margin-left: 10px;
   margin-bottom: 0px;
   margin-top: 0px;
@@ -111,6 +111,23 @@
     margin-right: 30px;
     margin-bottom: 10px;
   }
+  .item-text-container {
+    margin-left: 10px;
+    width: 160px;
+    height: 100px;
+    padding-left: 10px;
+  }
+  .item-name {
+    font-size: 15px;
+  }
+  .cuisine {
+    font-size: 13px;
+    margin-top: 5px;
+  }
+  .rating {
+    font-size: 14px;
+    margin-top: 5px;
+  }
 }
 
 @media (orientation: landscape) {
@@ -118,19 +135,16 @@
     text-decoration: none;
     width: 30%;
     margin-bottom: 5px;
-    margin-right: 40px;
+    margin-right: 30px;
   }
   .item-name {
     font-size: 15px;
-    color: #ed0505;
   }
   .cuisine {
     font-size: 13px;
-    color: #ffffff;
     margin-top: 5px;
   }
   .rating {
-    color: #e2ed05;
     font-size: 13px;
   }
 
