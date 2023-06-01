@@ -387,7 +387,6 @@
     width: 50%;
     display: grid;
     place-items: center;
-    background-image: linear-gradient(orange, yellow);
   }
   .card {
     width: 500px;

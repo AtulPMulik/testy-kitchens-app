@@ -76,9 +76,9 @@ class Counter extends Component {
             <form className="form" onSubmit={this.onSubmitForm}>
               <div className="logo-container">
                 <img
+                  alt="website logo"
                   className="website-logo"
                   src="https://res.cloudinary.com/djr2g813p/image/upload/v1684482099/Frame_274_elgwxc.jpg"
-                  alt="website logo"
                 />
                 <h1 className="website-heading"> Tasty Kitchens </h1>
               </div>
@@ -132,14 +132,15 @@ class Counter extends Component {
         </div>
         <div className="img-container">
           <img
+            alt="website login"
             className="login-lg-img"
             src="https://res.cloudinary.com/djr2g813p/image/upload/v1684482420/Rectangle_1456_wrq3ue.jpg"
-            alt="website login"
           />
           <img
+           alt="website login"
             className="login-sm-img"
             src="https://res.cloudinary.com/djr2g813p/image/upload/v1685163577/Rectangle_1457_zexloa.jpg"
-            alt="website login"
+           
           />
         </div>
       </div>

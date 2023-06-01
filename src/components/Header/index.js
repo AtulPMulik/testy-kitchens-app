@@ -40,9 +40,9 @@ const Header = props => {
               <Link to="/" className="link">
                 <div className="header-logo-container">
                   <img
+                    alt="website logo"
                     className="header-website-logo"
                     src="https://res.cloudinary.com/djr2g813p/image/upload/v1684482099/Frame_274_elgwxc.jpg"
-                    alt="website logo"
                   />
 
                   <h1 className="header-website-heading"> Testy Kitchens </h1>

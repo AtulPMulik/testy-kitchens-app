@@ -12,9 +12,9 @@ const RestaurantsItem = props => {
     <Link className="item-link" to={`/restaurant/${id}`}>
       <li className="list-item">
         <div className="item-container" testid="restaurant-item">
-          <img className="image" src={imageUrl} alt="item" />
+          <img alt="restaurant" className="image" src={imageUrl} />
           <div className="item-text-container">
-            <p className="item-name"> {name} </p>
+            <h1 className="item-name"> {name} </h1>
             <p className="cuisine"> {cuisine} </p>
             <div className="rating-container">
               <AiFillStar color="#FFCC00" height="12px" width="12px" />

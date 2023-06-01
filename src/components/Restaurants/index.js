@@ -94,7 +94,7 @@ class Restaurants extends Component {
   }
 
   onChangeOption = event => {
-    console.log(event.target.value)
+    // console.log(event.target.value)
     this.setState({activeSortBy: event.target.value}, this.getRestaurantsData)
   }
 

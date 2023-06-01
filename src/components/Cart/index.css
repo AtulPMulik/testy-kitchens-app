@@ -10,7 +10,6 @@
   width: 100%;
 }
 .cart-item-section {
-  box-sizing: border-box;
   background-color: #f9fbfe;
   border: 1px solid rgba(11, 105, 255, 0.1);
   align-self: center;
@@ -114,4 +113,22 @@
 .place-ord-link {
   align-self: flex-end;
   text-decoration: none;
+}
+
+@media (max-height: 767px) {
+  .table-heading {
+    font-size: 16px;
+    line-height: 24px;
+    width: 30%;
+  }
+  .price-heading {
+    width: 25%;
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .remove-all-btn {
+    height: 40px;
+    width: 100%;
+    font-size: 12px;
+  }
 }

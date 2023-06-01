@@ -2,7 +2,7 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {AiFillStar} from 'react-icons/ai'
-import {FaRupeeSign, FaGripLinesVertical, FaDoorOpen} from 'react-icons/fa'
+import {FaRupeeSign, FaGripLinesVertical} from 'react-icons/fa'
 // import TestyContext from '../../context/TestyContext'
 import Loader from 'react-loader-spinner'
 import Footer from '../Footer'
@@ -90,7 +90,6 @@ class RestaurantDetails extends Component {
       rating,
       costForTwo,
       reviewsCount,
-      opensAt,
     } = restaurantDetails
     return (
       <div className="restaurant-info-page">
@@ -98,12 +97,7 @@ class RestaurantDetails extends Component {
           <div className="restaurant-details-sec">
             <img className="card-img" src={imageUrl} alt="im" />
             <div className="rd-text-container">
-              <div className="rd-heading-container">
-                <h1 className="rd-heading"> {name} </h1>
-                <p className="rd-open-at">
-                  <FaDoorOpen className="open-door-icon" /> {opensAt}
-                </p>
-              </div>
+              <h1 className="rd-heading"> {name} </h1>
               <p className="rd-paragraph"> {cuisine} </p>
               <p className="rd-paragraph"> {location} </p>
               <div className="rating-and-cost-container">
@@ -139,7 +133,7 @@ class RestaurantDetails extends Component {
   }
 
   renderLoader = () => (
-    <div className="rd-loader-container">
+    <div className="rd-loader-container" testid="restaurant-details-loader">
       <Loader type="BallTriangle" color="red" height={100} width={100} />
     </div>
   )
