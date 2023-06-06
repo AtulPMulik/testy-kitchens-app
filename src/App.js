@@ -41,6 +41,7 @@ class App extends Component {
   }
 
   onAddToCart = foodItemDetails => {
+    // console.log(foodItemDetails)
     const {cartsList} = this.state
     const isItemExist = cartsList.every(each => each.id !== foodItemDetails.id)
     if (isItemExist === true) {

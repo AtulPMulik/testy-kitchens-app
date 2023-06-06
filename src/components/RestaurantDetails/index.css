@@ -217,6 +217,7 @@
     align-self: center;
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
     margin: 0px;
     padding: 0px;
     width: 90%;

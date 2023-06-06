@@ -16,7 +16,7 @@ class Counter extends Component {
 
   onSuccessfulLogin = jwtToken => {
     if (jwtToken !== undefined) {
-      Cookies.set('jwt_token', jwtToken, {expires: 30, path: '/'})
+      Cookies.set('jwt_token', jwtToken, {expires: 30})
       const {history} = this.props
       history.replace('/')
     }
@@ -97,14 +97,14 @@ class Counter extends Component {
                 />
               </div>
               <div className="input-container">
-                <label className="label" htmlFor="password">
+                <label className="label" htmlFor="userPassword">
                   PASSWORD
                 </label>
                 <input
                   value={password}
                   className="input"
                   type={showPassword ? 'text' : 'password'}
-                  id="password"
+                  id="userPassword"
                   onChange={this.onChangePassword}
                 />
               </div>
@@ -137,10 +137,9 @@ class Counter extends Component {
             src="https://res.cloudinary.com/djr2g813p/image/upload/v1684482420/Rectangle_1456_wrq3ue.jpg"
           />
           <img
-           alt="website login"
+            alt="website sm login"
             className="login-sm-img"
             src="https://res.cloudinary.com/djr2g813p/image/upload/v1685163577/Rectangle_1457_zexloa.jpg"
-           
           />
         </div>
       </div>

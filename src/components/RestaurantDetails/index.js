@@ -47,6 +47,7 @@ class RestaurantDetails extends Component {
         id: eachItem.id,
         imageUrl: eachItem.image_url,
         rating: eachItem.rating,
+        quantity: 0,
       })),
     }
     // console.log(updatedData)
@@ -74,10 +75,51 @@ class RestaurantDetails extends Component {
     const response = await fetch(url, options)
     // console.log(response)
     const data = await response.json()
-    console.log(data)
+    // console.log(data)
     if (response.ok === true) {
       this.onSuccessFullyFetchingData(data)
     }
+  }
+
+  onIncreaseFIQuantity = foodItemDetails => {
+    const {foodItemsDetailsList} = this.state
+    const updatedQList = foodItemsDetailsList.map(each => {
+      if (each.id === foodItemDetails.id) {
+        return {
+          ...each,
+          quantity: foodItemDetails.quantity + 1,
+        }
+      }
+      return each
+    })
+    this.setState({foodItemsDetailsList: updatedQList})
+  }
+
+  onDecreaseFIQuantity = foodItemDetails => {
+    const {foodItemsDetailsList} = this.state
+    const updatedQList = foodItemsDetailsList.map(each => {
+      if (each.id === foodItemDetails.id) {
+        return {
+          ...each,
+          quantity: foodItemDetails.quantity - 1,
+        }
+      }
+      return each
+    })
+    this.setState({foodItemsDetailsList: updatedQList})
+  }
+
+  onDisplayQBar = foodItemDetails => {
+    //  console.log(foodItemDetails)
+    const updatedDetails = {
+      ...foodItemDetails,
+      quantity: 1,
+    }
+    const {foodItemsDetailsList} = this.state
+    const newFoodItemsList = foodItemsDetailsList.filter(
+      each => each.id !== foodItemDetails.id,
+    )
+    this.setState({foodItemsDetailsList: [updatedDetails, ...newFoodItemsList]})
   }
 
   renderSuccessView = () => {
@@ -95,7 +137,7 @@ class RestaurantDetails extends Component {
       <div className="restaurant-info-page">
         <div className="restaurant-info-card-container">
           <div className="restaurant-details-sec">
-            <img className="card-img" src={imageUrl} alt="im" />
+            <img className="card-img" src={imageUrl} alt="restaurant" />
             <div className="rd-text-container">
               <h1 className="rd-heading"> {name} </h1>
               <p className="rd-paragraph"> {cuisine} </p>
@@ -124,6 +166,9 @@ class RestaurantDetails extends Component {
               key={each.id}
               foodItemDetails={each}
               foodItemInfo={foodItemsDetailsList}
+              onDisplayQBar={this.onDisplayQBar}
+              onIncreaseFIQuantity={this.onIncreaseFIQuantity}
+              onDecreaseFIQuantity={this.onDecreaseFIQuantity}
             />
           ))}
         </ul>
@@ -133,7 +178,7 @@ class RestaurantDetails extends Component {
   }
 
   renderLoader = () => (
-    <div className="rd-loader-container" testid="restaurant-details-loader">
+    <div testid="restaurant-details-loader" className="rd-loader-container">
       <Loader type="BallTriangle" color="red" height={100} width={100} />
     </div>
   )
