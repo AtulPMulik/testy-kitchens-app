@@ -4,7 +4,7 @@ import {Redirect} from 'react-router-dom'
 
 import './index.css'
 
-class Counter extends Component {
+class Login extends Component {
   state = {
     username: '',
     password: '',
@@ -112,7 +112,7 @@ class Counter extends Component {
                   Show Password
                 </label>
                 <input
-                  className="checkbox"
+                  className="checkbox-input"
                   type="checkbox"
                   id="checkbox"
                   onChange={this.onChangeShowPassword}
@@ -146,4 +146,4 @@ class Counter extends Component {
   }
 }
 
-export default Counter
+export default Login

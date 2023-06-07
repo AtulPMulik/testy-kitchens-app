@@ -1,6 +1,5 @@
 import {withRouter, Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
-// import Popup from 'reactjs-popup'
 import {ImHome} from 'react-icons/im'
 import {BsCart4} from 'react-icons/bs'
 import {MdLogout} from 'react-icons/md'
