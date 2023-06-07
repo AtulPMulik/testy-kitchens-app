@@ -126,6 +126,7 @@ class Restaurants extends Component {
             <MdSort className="sort-icon" />
             <p> Sort by </p>
             <select
+              id="selectId"
               value={activeSortBy}
               className="select"
               onChange={this.onChangeOption}

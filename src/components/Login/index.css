@@ -83,7 +83,7 @@
   align-self: center;
   width: 90%;
 }
-.checkbox {
+.checkbox-input {
   height: 20px;
   width: 40px;
 }
@@ -176,7 +176,7 @@
     height: 30px;
     width: 80%;
   }
-  .checkbox {
+  .checkbox-input {
     height: 15px;
     width: 40px;
     font-size: 20px;
@@ -334,7 +334,7 @@
   .checkbox-container {
     height: 40px;
   }
-  .checkbox {
+  .checkbox-input {
     height: 20px;
     width: 40px;
   }

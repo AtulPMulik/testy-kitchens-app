@@ -1,6 +1,6 @@
 import {withRouter, Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
-import Popup from 'reactjs-popup'
+// import Popup from 'reactjs-popup'
 import {ImHome} from 'react-icons/im'
 import {BsCart4} from 'react-icons/bs'
 import {MdLogout} from 'react-icons/md'
@@ -97,78 +97,18 @@ const Header = props => {
                   </li>
                 </Link>
                 <li className="logout-btn-container">
-                  <Popup
-                    trigger={
-                      <button type="button" className="button">
-                        Logout
-                      </button>
-                    }
-                    position="bottom right"
-                    offsetX="100px"
+                  <button
+                    onClick={onClickLogout}
+                    type="button"
+                    className="button"
                   >
-                    {close => (
-                      <div className="popup-container">
-                        <div className="popup-card">
-                          <p> Are you sure, You want to logout! </p>
-                          <div className="actions">
-                            <button
-                              className="confirm-btn"
-                              onClick={onClickLogout}
-                              type="button"
-                            >
-                              Confirm
-                            </button>
-                            <button
-                              className="cancel-btn"
-                              type="button"
-                              onClick={() => {
-                                close()
-                              }}
-                            >
-                              Cancel
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </Popup>
+                    Logout
+                  </button>
                 </li>
                 <li className="logout-icon-container">
-                  <Popup
-                    trigger={
-                      <button type="button" className="logout-icon">
-                        <MdLogout />
-                      </button>
-                    }
-                    position="bottom right"
-                    offsetX="100px"
-                  >
-                    {close => (
-                      <div className="popup-container">
-                        <div className="popup-card">
-                          <p> Are you sure, You want to logout! </p>
-                          <div>
-                            <button
-                              className="confirm-btn"
-                              onClick={onClickLogout}
-                              type="button"
-                            >
-                              Confirm
-                            </button>
-                            <button
-                              className="cancel-btn"
-                              type="button"
-                              onClick={() => {
-                                close()
-                              }}
-                            >
-                              Cancel
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </Popup>
+                  <button type="button" className="logout-icon">
+                    <MdLogout />
+                  </button>
                 </li>
               </ul>
             </div>

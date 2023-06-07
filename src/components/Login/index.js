@@ -1,5 +1,4 @@
 import {Component} from 'react'
-
 import Cookies from 'js-cookie'
 import {Redirect} from 'react-router-dom'
 
@@ -53,7 +52,7 @@ class Counter extends Component {
     this.setState({password: event.target.value})
   }
 
-  onClickShowPassword = () => {
+  onChangeShowPassword = () => {
     this.setState(prevState => ({showPassword: !prevState.showPassword}))
   }
 
@@ -116,7 +115,7 @@ class Counter extends Component {
                   className="checkbox"
                   type="checkbox"
                   id="checkbox"
-                  onClick={this.onClickShowPassword}
+                  onChange={this.onChangeShowPassword}
                 />
               </div>
               <button className="login-btn" type="submit">
