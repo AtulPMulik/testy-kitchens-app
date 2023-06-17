@@ -14,9 +14,9 @@ class Login extends Component {
   }
 
   onSuccessfulLogin = jwtToken => {
+    const {history} = this.props
     if (jwtToken !== undefined) {
       Cookies.set('jwt_token', jwtToken, {expires: 30})
-      const {history} = this.props
       history.replace('/')
     }
   }
@@ -37,6 +37,7 @@ class Login extends Component {
     const response = await fetch(url, options)
     // console.log(response)
     const data = await response.json()
+    // console.log(data)
     if (response.ok === true) {
       this.onSuccessfulLogin(data.jwt_token)
     } else {
@@ -73,15 +74,21 @@ class Login extends Component {
         <div className="card-container">
           <div className="card">
             <form className="form" onSubmit={this.onSubmitForm}>
+              <h1 className="welcome"> Welcome </h1>
               <div className="logo-container">
                 <img
                   alt="website logo"
                   className="website-logo"
                   src="https://res.cloudinary.com/djr2g813p/image/upload/v1684482099/Frame_274_elgwxc.jpg"
                 />
-                <h1 className="website-heading"> Tasty Kitchens </h1>
+                <div>
+                  <h1 className="website-heading"> Tasty Kitchens </h1>
+                  <p className="tagline"> So Quick, So Classy & So Good </p>
+                </div>
               </div>
-              <h1 className="login-heading"> Login </h1>
+              <h1 className="login-heading">
+                <span className="login-span-heading">Login</span> Your Account
+              </h1>
               <div className="input-container">
                 <label className="label" htmlFor="userInput">
                   USERNAME
@@ -93,6 +100,7 @@ class Login extends Component {
                   id="userInput"
                   autoComplete="off"
                   onChange={this.onChangeUserName}
+                  placeholder="User Name"
                 />
               </div>
               <div className="input-container">
@@ -105,6 +113,7 @@ class Login extends Component {
                   type={showPassword ? 'text' : 'password'}
                   id="userPassword"
                   onChange={this.onChangePassword}
+                  placeholder="Password"
                 />
               </div>
               <div className="checkbox-container">
