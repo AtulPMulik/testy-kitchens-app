@@ -43,7 +43,7 @@
   font-size: 30px;
   height: 20px;
   color: #ef4444;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Sofia', sans-serif;
 }
 .website-heading {
   color: #f7931e;
@@ -125,6 +125,17 @@
   font-size: 20px;
   cursor: pointer;
 }
+.login-btn:hover {
+  background-image: linear-gradient(to right, #de00ff, #8000ff);
+  color: white;
+}
+
+.login-btn:active {
+  background-image: linear-gradient(to right, #de00ff, #8000ff);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 .error-container {
   height: 40px;
   width: 90%;
@@ -154,55 +165,101 @@
   .login-page {
     display: flex;
     flex-direction: column;
+    background-image: none;
+    background-color: #ffffff;
+    overflow: auto;
   }
   .card-container {
     order: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 55%;
     width: 100%;
   }
   .card {
-    height: 90%;
-  }
-  .form {
     height: 100%;
     width: 100%;
+    background: #fefeff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+  .form {
+    height: 95%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+  }
+  .welcome {
+    font-size: 22px;
+    height: 8px;
+    margin-top: 0px;
+  }
   .website-heading {
-    font-size: 20px;
-    line-height: 30px;
+    color: #f7931e;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0px;
+    margin-top: 10px;
   }
   .login-heading {
-    font-size: 20px;
-    padding-bottom: 0px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 10px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .login-span-heading {
+    font-size: 24px;
+  }
+
+  .login-btn {
+    width: 30%;
+    height: 30px;
+    font-size: 22px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  .login-btn:hover {
+    background-image: linear-gradient(to right, #de00ff, #8000ff);
+    color: white;
+  }
+
+  .login-btn:active {
+    background-image: linear-gradient(to right, #de00ff, #8000ff);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
   }
   .input-container {
-    width: 80%;
-    margin-top: 10px;
+    width: 65%;
   }
   .input {
     height: 30px;
-    font-size: 20px;
+    font-size: 16px;
     letter-spacing: 1px;
   }
   .checkbox-container {
     height: 30px;
-    width: 80%;
+    width: 65%;
   }
   .checkbox-input {
-    height: 15px;
+    height: 18px;
     width: 40px;
     font-size: 20px;
     letter-spacing: 1px;
   }
   .img-container {
-    height: 50%;
+    height: 45%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -213,10 +270,10 @@
     display: none;
     width: 100%;
     height: 100%;
-    background-size: cover;
   }
   .login-sm-img {
-    width: 80%;
+    display: block;
+    width: 90%;
     height: 100%;
     background-size: cover;
   }
@@ -226,54 +283,14 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-  }
-
-  .website-heading {
-    color: #f7931e;
-    font-size: 24px;
-    font-style: italic;
-    font-weight: 700;
-    line-height: 20px;
-    letter-spacing: 0px;
     margin-top: 10px;
-  }
-  .login-heading {
-    font-size: 25px;
-    font-weight: 500;
-    line-height: 10px;
-    letter-spacing: 0em;
-    text-align: center;
-    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
-  .card {
-    width: 80%;
-    height: 90%;
-    background: #fefeff;
-    box-shadow: 0px 8px 40px rgba(7, 7, 7, 0.08);
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .form {
-    height: 80%;
-    width: 90%;
-  }
-
-  .login-btn {
-    width: 40%;
-    height: 40px;
-    font-size: 22px;
-    letter-spacing: 2px;
-    font-weight: 600;
-  }
   .error-container {
-    height: 20px;
+    height: 10px;
     width: 80%;
-    margin-top: 5px;
+    margin-top: 3px;
     text-align: center;
   }
   .error-paragraph {
@@ -299,6 +316,7 @@
   }
   .card {
     height: 90%;
+    border-radius: 20px;
   }
   .form {
     height: 100%;
@@ -307,18 +325,34 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 20px;
   }
 
   .logo-container {
+    width: 60%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 0px;
+    background-color: #ffffff;
+    border-radius: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .website-heading {
+    font-size: 28px;
+    height: 15px;
+  }
+  .tagline {
+    height: 15px;
+    font-size: 16px;
+  }
+  .website-logo {
+    width: 60px;
+    height: 60px;
   }
 
   .input-container {
-    width: 90%;
+    width: 70%;
   }
   .input {
     height: 40px;
@@ -337,6 +371,7 @@
   }
   .checkbox-container {
     height: 40px;
+    width: 70%;
   }
   .checkbox-input {
     height: 20px;
@@ -398,7 +433,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     border-radius: 80px;
   }
@@ -409,6 +444,28 @@
   }
   .website-heading {
     font-size: 20px;
+  }
+  .welcome {
+    font-size: 30px;
+    height: 20px;
+    color: #ef4444;
+    font-family: 'Sofia', sans-serif;
+  }
+  .logo-container {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .website-logo {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    margin-right: 10px;
   }
   .login-heading {
     font-size: 15px;
